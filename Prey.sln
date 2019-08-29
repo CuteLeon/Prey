@@ -3,6 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prey.Model", "Prey.Model", "{D004C8B5-8E58-4D31-9DDB-9AEF85C66B14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prey.Repository", "Prey.Repository", "{F36CC149-BE5C-4BEC-8334-200B91B19B18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prey.Service", "Prey.Service", "{76372368-1429-4A10-902C-8F3D38967DEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prey.Infrastructure", "Prey.Infrastructure", "{8FC8C256-E36F-44BD-9784-4548894A9A06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prey.Client", "Prey.Client", "{1694DF37-7892-47D3-85E2-78934C70253F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prey.Web", "Prey.Web", "{0BB4AC99-7605-4344-A1C1-C4FF67E210C5}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
