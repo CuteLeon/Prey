@@ -7,12 +7,14 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <OutputPath>..\Release\WebSPA</OutputPath>
+    <CodeAnalysisRuleSet>..\Prey.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>..\Debug\WebSPA</OutputPath>
+    <CodeAnalysisRuleSet>..\Prey.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <None Include="..\Prey.ruleset" Link="Prey.ruleset" />
   </ItemGroup>

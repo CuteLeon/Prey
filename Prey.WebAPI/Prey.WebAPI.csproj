@@ -6,10 +6,12 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>..\Debug\WebAPI</OutputPath>
+    <CodeAnalysisRuleSet>..\Prey.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <OutputPath>..\Release\WebAPI</OutputPath>
+    <CodeAnalysisRuleSet>..\Prey.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>
