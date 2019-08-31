@@ -1,27 +1,43 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
+using Prey.Common;
 
 namespace Prey.Models
 {
     /// <summary>
-    /// 设备基类.
+    /// 设备基类
     /// </summary>
-    public abstract class DeviceBase
+    public abstract class DeviceBase : EntityBase
     {
         /// <summary>
-        /// Gets or sets 设备ID
+        /// Gets or sets 型号
         /// </summary>
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "设备 ID 不允许为空")]
-        public string ID { get; set; }
+        [DefaultValue(DefaultValues.UnknownString)]
+        public string Model { get; set; }
 
         /// <summary>
-        /// Gets or sets 设备名称
+        /// Gets or sets 拥有者ID
         /// </summary>
-        [DefaultValue("未命名设备")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "设备名称不允许为空")]
-        public string Name { get; set; }
+        public string OwnerID { get; set; }
+
+        /// <summary>
+        /// Gets or sets 拥有者
+        /// </summary>
+        public Person Owner { get; set; }
+
+        /// <summary>
+        /// Gets or sets 位置
+        /// </summary>
+        public virtual List<Location> Locations { get; set; } = new List<Location>();
+
+        /// <summary>
+        /// Gets or sets 联系人
+        /// </summary>
+        public virtual List<Contact> Contacts { get; set; } = new List<Contact>();
+
+        /// <summary>
+        /// Gets or sets 上传文件
+        /// </summary>
+        public virtual List<UploadFile> UploadFiles { get; set; } = new List<UploadFile>();
     }
 }

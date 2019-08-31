@@ -24,4 +24,8 @@
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.6.0-preview8.19405.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Prey.Common\Prey.Common.csproj" />
+  </ItemGroup>
+
 </Project>
