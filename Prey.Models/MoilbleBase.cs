@@ -3,7 +3,7 @@
     /// <summary>
     /// 移动设备
     /// </summary>
-    public abstract class Moilble : DeviceBase
+    public abstract class MoilbleBase : DeviceBase
     {
     }
 }

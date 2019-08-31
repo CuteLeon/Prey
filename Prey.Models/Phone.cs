@@ -6,7 +6,7 @@ namespace Prey.Models
     /// <summary>
     /// 手机
     /// </summary>
-    public class Phone : Moilble
+    public class Phone : MoilbleBase
     {
         /// <summary>
         /// Gets or sets 手机号码

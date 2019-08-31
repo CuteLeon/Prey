@@ -34,4 +34,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Prey.Models\Prey.Models.csproj" />
+  </ItemGroup>
+
 </Project>
