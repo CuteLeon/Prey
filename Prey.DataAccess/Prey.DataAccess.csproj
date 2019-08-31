@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\Prey.ruleset" Link="Prey.ruleset" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0-preview8.19405.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0-preview8.19405.11">
       <PrivateAssets>all</PrivateAssets>
