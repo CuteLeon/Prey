@@ -1,5 +1,5 @@
-﻿using Prey.Common;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using Prey.Common;
 
 namespace Prey.Models
 {
