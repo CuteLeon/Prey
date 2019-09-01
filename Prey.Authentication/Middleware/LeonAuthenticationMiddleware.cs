@@ -29,7 +29,6 @@ namespace Prey.Authentication.Middleware
         /// <returns></returns>
         public Task Invoke(HttpContext httpContext)
         {
-
             return this.next(httpContext);
         }
     }
