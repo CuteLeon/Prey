@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Prey.DataAccess;
+using Prey.Services;
 
 namespace Prey.WebAPI
 {
@@ -31,6 +34,15 @@ namespace Prey.WebAPI
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IPersonService, PersonService>();
+
+            services.AddMemoryCache();
+
+            services.AddDbContext<DBContext>(options =>
+                options
+                    .UseLazyLoadingProxies()
+                    .UseSqlite(this.Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddControllers();
         }
 
