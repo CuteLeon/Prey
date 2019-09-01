@@ -11,8 +11,8 @@ namespace Prey.WebAPI.Controllers
     /// <summary>
     /// 人员控制器
     /// </summary>
+    [Route("[Controller]/[Action]")]
     [ApiController]
-    [Route("[controller]/[action]")]
     public class PersonController : ControllerBase
     {
         /// <summary>
