@@ -39,14 +39,20 @@ namespace Prey.WebAPI.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        // GET: api/Person/5
-        [HttpGet("{id}", Name = "Get")]
+        /// <summary>
+        /// Get with id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST: api/Person
+        /// <summary>
+        /// Post
+        /// </summary>
+        /// <param name="value"></param>
         [HttpPost]
         public void Post([FromBody] string value)
         {
