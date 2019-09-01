@@ -34,6 +34,7 @@ namespace Prey.WebAPI.Controllers
         [HttpGet]
         public IEnumerable<Person> Get()
         {
+            var count = this.PersonService.CountAsync().Result;
             return Enumerable.Range(1, 10).Select(index => new Person() { Name = $"人员-{index}", });
         }
 
