@@ -1,0 +1,16 @@
+错误：bad request data: "Invalid request line:..."
+原因：使用外部 json 文件和 .UseUrls(config["urls"]) 扩展方法配置监听端口
+解决方案：移除 app.UseHttpsRedirection(); HTTPS 重定向中间件；
+
+Swagger
+地址：http://127.0.0.1:{port}/swagger/index.html
+显示 API 注释：
+	项目> 生成> 勾选 XML文档文件：..\Debug\WebAPI\netcoreapp3.0\Prey.WebAPI.xml
+	options.IncludeXmlComments(
+        Path.Combine(
+            Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory),
+            "Prey.WebAPI.xml"));
+不允许相同协议的方法重载，例如：
+	不允许 [HttpGet] Get() 和 [HttpGet] Get(string name)；
+	允许 [HttpGet] Delete(string id) 和 [HttpPost] Delete([FromBody] Entity entity)；
+	仅显示第一个重载方法：	options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());

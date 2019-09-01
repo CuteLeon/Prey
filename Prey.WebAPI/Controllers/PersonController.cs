@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Prey.Models;
 using Prey.Services;
 
 namespace Prey.WebAPI.Controllers
@@ -26,32 +28,52 @@ namespace Prey.WebAPI.Controllers
         }
 
         /// <summary>
-        /// Get
+        /// 获取人员
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Person> Get()
         {
-            var count = this.PersonService.CountAsync().Result;
-            return new string[] { "value1", "value2" };
+            return Enumerable.Range(1, 10).Select(index => new Person() { Name = $"人员-{index}", });
         }
 
         /// <summary>
-        /// Get with id
+        /// 获取人员
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="name">搜索名称</param>
         /// <returns></returns>
-        public string Get(int id)
+        [HttpGet]
+        public IEnumerable<Person> Get(string name)
         {
-            return "value";
+            return Enumerable.Range(1, 10).Select(index => new Person() { Name = $"人员-{index}", });
         }
 
         /// <summary>
-        /// Post
+        /// 删除人员
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="id">人员 ID</param>
+        /// <returns></returns>
+        [HttpGet]
+        public bool Delete(string id)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 创建人员
+        /// </summary>
+        /// <param name="person"></param>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Create([FromBody] Person person)
+        {
+        }
+
+        /// <summary>
+        /// 编辑人员
+        /// </summary>
+        /// <param name="person"></param>
+        [HttpPost]
+        public void Edit([FromBody] Person person)
         {
         }
     }

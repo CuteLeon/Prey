@@ -1,9 +1,13 @@
+using System;
+using System.IO;
+using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using Prey.DataAccess;
 using Prey.Services;
 
@@ -36,6 +40,34 @@ namespace Prey.WebAPI
         {
             services.AddTransient<IPersonService, PersonService>();
 
+            services.AddSwaggerGen(options =>
+                {
+                    options.SwaggerDoc("PreyWebAPI", new OpenApiInfo()
+                    {
+                        Version = "1.0.0.0",
+                        Title = "Prey WebAPI",
+                        Description = "Prey WebAPI ÃèÊöÎÄµµ",
+                        Contact = new OpenApiContact()
+                        {
+                            Name = "Leon",
+                            Email = "Leon.ID@qq.com",
+                            Url = new Uri("https://github.com/CuteLeon/Prey"),
+                        },
+                        License = new OpenApiLicense()
+                        {
+                            Name = "CuteLeon/Prey",
+                            Url = new Uri("https://github.com/CuteLeon/Prey"),
+                        },
+                    });
+
+                    options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+
+                    options.IncludeXmlComments(
+                        Path.Combine(
+                            Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory),
+                            "Prey.WebAPI.xml"));
+                });
+
             services.AddMemoryCache();
 
             services.AddDbContext<DBContext>(options =>
@@ -65,6 +97,12 @@ namespace Prey.WebAPI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/PreyWebAPI/swagger.json", "Prey WebAPI Document");
             });
         }
     }

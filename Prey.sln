@@ -62,7 +62,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prey.WebSPA", "Prey.WebSPA\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prey.Security", "Prey.Security", "{E6B6A2C2-7B2D-46DE-BE1A-E19825C13A70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prey.Authentication", "Prey.Authentication\Prey.Authentication.csproj", "{1FB97C44-9757-46F7-9663-2B9722C5B8B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prey.Authentication", "Prey.Authentication\Prey.Authentication.csproj", "{1FB97C44-9757-46F7-9663-2B9722C5B8B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document", "Document", "{73B09C02-26F6-4A1E-A05D-592EA1A12EA5}"
+	ProjectSection(SolutionItems) = preProject
+		Document.txt = Document.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
