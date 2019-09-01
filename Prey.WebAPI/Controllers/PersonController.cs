@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Prey.Services;
 
@@ -11,8 +7,8 @@ namespace Prey.WebAPI.Controllers
     /// <summary>
     /// 人员控制器
     /// </summary>
-    [Route("[Controller]/[Action]")]
     [ApiController]
+    [Route("[Controller]/[Action]")]
     public class PersonController : ControllerBase
     {
         /// <summary>
@@ -36,6 +32,7 @@ namespace Prey.WebAPI.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            var count = this.PersonService.CountAsync().Result;
             return new string[] { "value1", "value2" };
         }
 
