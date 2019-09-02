@@ -13,6 +13,6 @@
         /// <summary>
         /// Gets or sets 设备
         /// </summary>
-        public DeviceBase Device { get; set; }
+        public virtual DeviceBase Device { get; set; }
     }
 }

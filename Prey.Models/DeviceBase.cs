@@ -23,7 +23,7 @@ namespace Prey.Models
         /// <summary>
         /// Gets or sets 拥有者
         /// </summary>
-        public Person Owner { get; set; }
+        public virtual Person Owner { get; set; }
 
         /// <summary>
         /// Gets or sets 位置
