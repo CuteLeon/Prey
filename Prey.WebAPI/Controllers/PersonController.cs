@@ -30,22 +30,12 @@ namespace Prey.WebAPI.Controllers
         /// <summary>
         /// 获取人员
         /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        public IEnumerable<Person> Get()
-        {
-            var count = this.PersonService.CountAsync().Result;
-            return Enumerable.Range(1, 10).Select(index => new Person() { Name = $"人员-{index}", });
-        }
-
-        /// <summary>
-        /// 获取人员
-        /// </summary>
         /// <param name="name">搜索名称</param>
         /// <returns></returns>
         [HttpGet]
         public IEnumerable<Person> Get(string name)
         {
+            var count = this.PersonService.CountAsync().Result;
             return Enumerable.Range(1, 10).Select(index => new Person() { Name = $"人员-{index}", });
         }
 
